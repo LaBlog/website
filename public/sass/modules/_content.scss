@@ -1,0 +1,9 @@
+.content {
+    background-color: #ffffff;
+    border-left: 1px solid #eee;
+    width: 75%;
+    float: left;
+    padding: 40px;
+    padding-top: 10px;
+    @include box-sizing(border-box);
+}

@@ -1,0 +1,44 @@
+/* Default body text formatting. */
+body {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    color: #404040;
+}
+
+/* Default link styling and effects. */
+a {
+    color: inherit;
+    text-decoration: underline;
+    @include transition(all 200ms linear);
+
+    &:hover {
+        color: #3498db;
+    }
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+code {
+    color: #3498db;
+    background-color: #f5f5f5;
+    padding: 0 5px;
+}
+
+pre code {
+    background-color: transparent;
+}

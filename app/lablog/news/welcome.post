@@ -1,0 +1,19 @@
+Welcome to LaBlog
+=================
+
+Welcome to the LaBlog website. A simple blogging system built on the popular Laravel 4 php framework.
+
+To get started with LaBlog, please install Laravel. This can be done by following the instructions on the laravel site [here](http://laravel.com).
+
+Once done, you can install LaBlog through composer by adding the package requirement to your `composer.json` file.
+
+``` .lang-php
+...
+"require" : {
+    "laravel/laravel" : "4.1.*",
+    "lablog/lablog" : "0.*"
+}
+...
+```
+
+You can also install any of the LaBlog packages by adding their requirement to your `composer.json` file as well.

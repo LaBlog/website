@@ -1,0 +1,30 @@
+.post {
+    ul {
+        width: 100%;
+        padding-bottom: 30px;
+        padding-left: 20px;
+        @include box-sizing(border-box);
+
+        li {
+            a {
+                text-decoration: none;
+            }
+        }
+
+        li:before {
+            content: "#";
+            font-style: italic;
+            display: block;
+            float: left;
+            width: 1.2em;
+            color: #ddd;
+        }
+    }
+
+    hr {
+        background-color: #eeeeee;
+        border: none;
+        outline: none;
+        height: 1px;
+    }
+}

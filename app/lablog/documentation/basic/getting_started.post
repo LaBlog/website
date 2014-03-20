@@ -1,0 +1,163 @@
+Getting Started with LaBlog
+===========================
+
+- [Installation](#installation)
+- [Laravel Setup](#laravel-setup)
+- [Pages & Posts](#content)
+- [Config](#config)
+- [Default Theme](#theme)
+
+- - -
+
+Installation {#installation}
+============================
+
+The below installation instructions require that you already have Laravel installed and running according to the instructions [on the Laravel website](http://laravel.com/docs/quick){.main-link}.
+
+## Using the Composer Package ##
+
+Like with Laravel, Lablog uses [Composer](http://getcomposer.org){.main-link} for all of its package and theme management.
+
+Please install composer using the [instructions provided](https://getcomposer.org/doc/00-intro.md){.main-link}.
+
+Once both Composer and Laravel are both installed, you can install LaBlog. To do this, just add the LaBlog package to the required section of your `composer.json` file like below.
+
+*Note: The `composer.json` file can be found in the root of your Laravel installation.*
+
+```
+...
+"require": {
+    ...
+    "Lablog\Lablog": "0.*"
+},
+...
+```
+
+When you have the requirement added to your `composer.json` file, you will need to update composer to install the package.
+
+```
+composer update
+```
+
+Once done, all that remains is to connect the plugin to Laravel using the service providers.
+
+Laravel Setup {#laravel-setup}
+==============================
+
+## Service Providers ##
+
+Now you have LaBlog installed, all that remains is to connect the plugin to laravel. This is nice and simple and only requires a few lines of code.
+
+First off, we need to add the required service providers to Laravel. This is done in your `app/config/app.php` file.
+
+``` .php
+'providers' => array(
+    ...
+    'Lablog\Lablog\LablogServiceProvider',
+    'TwigBridge\TwigServiceProvider',
+);
+```
+
+You will notice above that we have also added the service provider for `TwigBridge`. LaBlog uses the twig templating engine, so TwigBridge is required for seamless intergration into Laravel.
+
+## Routes ##
+
+By default, LaBlog installs the blog to run on your site root. (eg. http://example.com/)
+
+For this to work correctly on install, you must make sure that you have no other routes for this request in your `app/routes.php` file.
+
+When Laravel is installed, it automatically adds a route for `/` to your site, remove this.
+
+*Note: If you do not wish to remove the `/` route, you can change the LaBlog config to run your site on a route of your choice.*
+
+Pages & Posts {#content}
+========================
+
+Now we have LaBlog setup and running, all we need to do is add some posts and pages.
+
+There is one page you must add before you can get the site up and running.
+
+Create a `lablog` folder in your `app` folder, so you have `app/lablog`.
+
+This folder is where ALL of the blog content is kept. Pages, posts and categories are all stored here.
+
+Now, we need to create a home page for our blog, or we will get a 404 error when we load the site. To do this, create a `index.page` file in your `app/lablog` folder.
+
+Notice the `.page` file extension. LaBlog uses `.page` to signify a blog page, and `.post` to signify a blog post.
+
+The folder structue for LaBlog is as follows.
+
+``` .php
+app/lablog
+    /category
+        /subcategory
+            sub_category_post.post
+        /anothersubcategory
+        a_post.post
+        another_post.post
+    /category
+        my_post.post
+    index.page
+    other_page.page
+```
+
+Config {#config}
+================
+
+LaBlog comes shipped with all of the default config required to be up and running before these steps. But in such a case where you may like to change the route for your blog, this can easly be done.
+
+Firstly, we will need to publish the LaBlog settings to your Laravel install.
+
+```
+php artisan config:publish lablog/lablog
+```
+
+This will move all of the LaBlog config over to your Laravel application. The config files are stored within the `app/config/packages/lablog/lablog` directory.
+
+Once published, open the `config.php` file from the above directory.
+
+In this file you can change your blogs prefix, add page routes to the site and load a theme.
+
+## Changing the Blog Root ##
+
+If you would like your blogs root to be setup on `http://example.com/blog`, just simply change the `prefix` value in the config file to `blog/`.
+
+``` .php
+...
+'prefix' => 'blog/',
+...
+```
+
+*Note: The forward slash (/) at the end of the route is required.*
+
+LaBlog Default Theme {#theme}
+=============================
+
+LaBlog comes shipped with a very basic default theme enabled.
+
+If you have browsed to your blog already, you may notice that no styles have been pulled through. This is because we need to publish the LaBlog resources. This can be done by running the below command.
+
+```
+php artisan asset:publish lablog/lablog
+```
+
+Now, with a simple page refresh (or load) you will see the default theme!
+
+Conclusion
+==========
+
+Well, that is everything for the getting started guide for LaBlog. We now know how to install the system, change the config and load the default blog theme.
+
+Now everything is up and running, please browse around this for more resources on how to create themes, creating templating extensions and more.
+
+
+
+
+
+
+
+
+
+
+
+

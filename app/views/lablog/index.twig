@@ -1,0 +1,16 @@
+{# Extend the main template file. #}
+{% extends 'lablog.layout.master' %}
+
+{% block content %}
+
+    {# Find all posts in the news category. #}
+    {% set news = getCategoryPosts('news') %}
+
+    {# Loop through all news posts and limit to 3 max. #}
+    {% for post in news | slice(0, 3) %}
+        <article>
+            {{ post.content }}
+        </article>
+    {% endfor %}
+
+{% endblock %}

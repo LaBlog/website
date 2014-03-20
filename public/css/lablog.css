@@ -1,0 +1,71 @@
+/* Welcome to Compass. In this file you should write your main styles. (or centralize your imports) Import this file using the following HTML or equivalent: <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
+
+html { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+
+q, blockquote { quotes: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
+
+a img { border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+
+main { background-color: #fff; float: left; width: 100%; }
+
+/* Default body text formatting. */
+body { font-family: "Roboto", Helvetica, Arial, sans-serif; font-weight: 200; color: #404040; }
+
+/* Default link styling and effects. */
+a { color: inherit; text-decoration: underline; -moz-transition: all 200ms linear; -o-transition: all 200ms linear; -webkit-transition: all 200ms linear; transition: all 200ms linear; }
+a:hover { color: #3498db; }
+
+h1 { font-size: 32px; font-weight: 500; margin-top: 30px; margin-bottom: 30px; }
+
+h2 { font-size: 28px; font-weight: 500; margin-bottom: 20px; }
+
+p { margin-bottom: 15px; }
+
+code { color: #3498db; background-color: #f5f5f5; padding: 0 5px; }
+
+pre code { background-color: transparent; }
+
+.container { width: 1170px; margin: 0 auto; }
+
+/* The welcome block styles. */
+.welcome { margin: 0 auto; max-width: 1170px; text-align: center; /* Style the title header. */ /* Style the intro paragraph and laravel link. */ }
+.welcome h1 { font-family: alex-brush, "Helvetica", Arial, sans-serif; font-weight: bold; font-size: 64px; color: #3498db; padding: 50px 0 20px 0; margin-bottom: 0; }
+.welcome p { font-style: italic; }
+.welcome p a { font-weight: bold; }
+
+/* Main site navigation module. */
+.header-navigation, .footer-navigation { margin-top: 40px; float: left; width: 100%; border-bottom: 1px solid #e5e5e5; text-align: center; background-color: #eeeeee; /* Navigation link styles. */ }
+.header-navigation a, .footer-navigation a { display: inline-block; padding: 20px 10px; text-decoration: none; text-transform: uppercase; font-size: 12px; font-weight: 400; color: #999; letter-spacing: 1px; }
+.header-navigation a:hover, .footer-navigation a:hover { color: #3498db; }
+
+/* Remove top margin for footer navigation. */
+.footer-navigation { margin-top: 0; }
+
+/* Site side-navigation module. */
+.side-navigation { padding-top: 20px; width: 25%; float: left; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.side-navigation h2 { color: #3498db; font-size: 20px; margin-bottom: 20px; }
+.side-navigation ul { width: 100%; padding-bottom: 30px; padding-left: 20px; margin-bottom: 20px; border-bottom: 1px solid #eee; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.side-navigation ul li:before { content: "#"; font-style: italic; display: block; float: left; width: 1.2em; color: #ddd; }
+.side-navigation ul:last-child { border-bottom: none; }
+.side-navigation a { text-decoration: none; }
+
+.content { background-color: #ffffff; border-left: 1px solid #eee; width: 75%; float: left; padding: 40px; padding-top: 10px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+footer { width: 100%; float: left; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+footer .copyright { float: left; width: 100%; text-transform: uppercase; text-align: center; background-color: #eeeeee; padding: 20px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+footer .copyright p { font-size: 12px; color: #aaaaaa; margin-bottom: 0; }
+
+.post ul { width: 100%; padding-bottom: 30px; padding-left: 20px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.post ul li a { text-decoration: none; }
+.post ul li:before { content: "#"; font-style: italic; display: block; float: left; width: 1.2em; color: #ddd; }
+.post hr { background-color: #eeeeee; border: none; outline: none; height: 1px; }
