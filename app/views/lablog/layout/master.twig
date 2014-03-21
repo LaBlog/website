@@ -7,7 +7,11 @@
     <!-- Add the InstantClick PAJAX System -->
     <script data-no-instant src="{{ url('js/instantclick.min.js') }}"></script>
 
-    {# {% include 'lablog.layout.analytics' %} #}
+    <!-- Load standard site stylesheets. -->
+    <link data-no-instant rel="stylesheet" href="{{ url('/css/lablog.css') }}">
+    <link data-no-instant href="{{ url('/css/prettify.css') }}" type="text/css" rel="stylesheet" />
+
+    {% include 'lablog.layout.analytics' %}
 
     <!-- Load typekit scripts in header. -->
     <script data-no-instant type="text/javascript" src="//use.typekit.net/dcx4uyu.js"></script>
@@ -23,10 +27,6 @@
 
     <!-- Load google code prettify. -->
     <script data-no-instant src="https://google-code-prettify.googlecode.com/svn/loader/prettify.js"></script>
-
-    <!-- Load standard site stylesheets. -->
-    <link data-no-instant rel="stylesheet" href="{{ url('/css/lablog.css') }}">
-    <link data-no-instant href="{{ url('/css/prettify.css') }}" type="text/css" rel="stylesheet" />
 </head>
 <body>
     {% block header %}
@@ -39,8 +39,8 @@
                 <div class="container">
                     <a href="{{ url('/') }}"><i class="fa fa-fw fa-home"></i> Home</a>
                     <a href="{{ url('plugins') }}"><i class="fa fa-fw fa-cog"></i> Plugins</a>
-                    <a href="http://github.com/lablog"><i class="fa fa-fw fa-github"></i> GitHub</a>
-                    <a href=""><i class="fa fa-fw fa-twitter"></i> Twitter</a>
+                    <a target="_blank" href="http://github.com/lablog"><i class="fa fa-fw fa-github"></i> GitHub</a>
+                    <a target="_blank" href=""><i class="fa fa-fw fa-twitter"></i> Twitter</a>
                 </div>
             </nav>
         </header>
