@@ -70,3 +70,5 @@ footer .copyright p { font-size: 12px; color: #aaaaaa; margin-bottom: 0; }
 .post ul li a { text-decoration: none; }
 .post ul li:before { content: "#"; font-style: italic; display: block; float: left; width: 1.2em; color: #ddd; }
 .post hr { background-color: #eeeeee; border: none; outline: none; height: 1px; }
+
+.page ul { list-style: initial; margin-left: 40px; }

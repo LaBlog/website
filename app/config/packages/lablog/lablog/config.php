@@ -16,7 +16,8 @@ return array(
      * Example: about, contact, terms_and_conditions
      */
     'pages' => array(
-        'plugins'
+        'plugins',
+        'changelog'
     ),
 
     /**
