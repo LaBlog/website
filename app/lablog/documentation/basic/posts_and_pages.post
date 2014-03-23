@@ -1,0 +1,108 @@
+Posts And Pages
+===============
+
+- [File and Folder Structure](#file-folder-structure)
+- [Creating a Post](#creating-a-post)
+- [Creating a Page](#creating-a-page)
+- [Categories](#categories)
+
+File and Folder Structure {#file-folder-structure}
+==================================================
+
+The file and folder structure for LaBlog is straight forward and simple.
+
+All posts and pages are contained with a `lablog` directory with in the `app` directory (`app/lablog`).
+
+All pages __must__ be stored in the root directory of the `lablog` directory where as posts __must__ be stored in a sub directory with in this directory. (This creates categories, see categories section below.)
+
+The folder structure is as follows:
+
+``` .php
+// LaBlog root path.
+app/lablog
+
+// Lablog index page path.
+app/lablog/index.page
+
+// LaBlog example custom page path.
+app/lablog/mypage.page
+
+// LaBlog example post path.
+app/lablog/post_category/mypost.post
+```
+
+You may have noticed that the file extension of the posts and pages are not the usual `.md` or `.txt` extensions you may expect. This is done to enable easy identification of a post or page.
+
+Posts __must__ be saved with a `.post` extension.
+
+Pages __must__ be saved with a `.page` extension.
+
+Creating a Post {#creating-a-post}
+==================================
+
+Posts are easy and simple to create, all that is required is a folder to put them in.
+
+As noted above, you may not put posts in the LaBlog root directory, they must be based inside a `category`.
+
+A category is simply a `sub directory` within the LaBlog root. Categories can go down as many levels as you like, so feel free to make some sub categories.
+
+The url of a post is based on the category that the post is in, and the post file name.
+For example `app/lablog/mycategory/mypost.post` would have the url of `http://myblog.com/mycategory/mypost.post`.
+
+By default, LaBlog posts are considered as markdown. This means that a LaBlog post can be written in markdown or plain html.
+
+The default markdown processor used is [Markdown Extra](http://michelf.ca/projects/php-markdown/extra/). But a plugin for [parsedown](http://parsedown.org/) is also available if you prefer.
+
+*Note: There are also plugins available for different markdown processors and post types.*
+
+An Example Post:
+
+```
+Welcome to My Blog
+==================
+
+Welcome to my blog. This is a simple blog post using markdown.
+
+- A Simple Markdown List Item
+- Another Simple Markdown List Item
+- [A List Item Link](http://example.com)
+```
+
+Creating a Page {#creating-a-page}
+==================================
+
+Creating a page is done in the same way as creating a post, with the exception that all pages __must__ be placed with in the root of the `app/lablog` folder.
+
+Pages must also be registered within the lablog config file. So for everything to work, you must first have published the LaBlog package config.
+
+`php artisan config:publish lablog/lablog`
+
+Once published, you will be able to find the config files for LaBlog in the `app/config/packages/lablog/lablog` folder. The pages are registered within the `config.php` file.
+
+Add each page you wish to use to the pages array, like so:
+
+``` .php
+...
+'pages' => array(
+    'my_other_page',
+    'another_page'
+),
+...
+```
+
+Once registered, and a `pagename.page` has been created in the LaBlog root, you will be able to access the page by adding the page name to the url like so `http://example.com/pagename`.
+
+All LaBlog pages are also considered as markdown by default, the same as posts.
+
+Categories {#categories}
+========================
+
+Categories are an important part of LaBlog. All posts must be stored in a category.
+
+In its most simple form, a category is just a sub directory of the LaBlog root folder that contains posts.
+
+Categories also include their own pages. What these pages do depends on the theme you are using. The usual use for these pages is to list all of the posts and sub categories with in the category being viewed.
+
+These pages can be accessed by prefixing the category name with `/category/`. For example, accessing the `my_category` category page would be done like this. `http://example.com/category/my_category`.
+
+Sub categories can also be accessed in a similar way. `http://example.com/category/my_category/my_sub_category/`

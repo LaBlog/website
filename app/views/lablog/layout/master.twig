@@ -49,6 +49,7 @@
     <main>
         <div class="container">
             <aside class="side-navigation">
+                <h1 class="documentation-version">Version 0.1</h1>
                 <h2>Basic</h2>
                 <ul>
                     <li>
@@ -56,10 +57,8 @@
                         <a href="{{ getting_started.url }}">{{ getting_started.name | title | replace('_', ' ') }}</a>
                     </li>
                     <li>
-                        <a href="">Posts &amp; Pages</a>
-                    </li>
-                    <li>
-                        <a href="">Categories</a>
+                        {% set posts_pages = getPost('documentation/basic', 'posts_and_pages') %}
+                        <a href="{{ posts_pages.url }}">{{ posts_pages.name | title | replace('_', ' ') }}</a>
                     </li>
                 </ul>
 
@@ -68,6 +67,7 @@
                     <li><a href="">Global Config</a></li>
                     <li><a href="">Blog Config</a></li>
                     <li><a href="">Post/Page Config</a></li>
+                    <li><a href="">Class Bindings</a></li>
                 </ul>
 
                 <h2>Theming</h2>
