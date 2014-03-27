@@ -1,0 +1,83 @@
+Global Configuration Options
+============================
+
+- [Global Config](#global-config)
+- [Global Config File](#global-config-file)
+- [Theme File Use](#theme-file-use)
+- [Plugin Usage](#plugin-usage)
+
+- - -
+
+Global Config {#global-config}
+==============================
+
+LaBlog comes with some global configuration options which can be used to pass variables into every page template.
+
+The required variables or variables being used can very depending on the theme being used or on what you wish to display.
+
+For example the global config file could include anything from your blog title prefix to an array of random quotes to display on the home page.
+
+This theme file could also be a place for plugins to store some easily accessable settings that span throughout multiple plugins.
+
+Global Config File {#global-config-file}
+========================================
+
+Any variables to be passed into the templates must be added to the config file located at `app/config/packages/lablog/lablog/global.php`. If the file is missing, make sure that you have published the package configuration using the below command.
+
+```
+php artisan config:publish lablog/lablog
+```
+
+The config file can be an array containing any values or objects you wish.
+
+``` .php
+// global.php config file.
+
+return array(
+    // Set the html title prefix for the blog.
+    'title' => 'My Blog Title Prefix',
+
+    // Set some random quotes to be displayed on the site.
+    'random_quotes' => array(
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nam?',
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus!'
+    )
+);
+```
+
+Theme File Use {#theme-file-use}
+================================
+
+Using any set global config options in a theme file is nice and simple.
+
+As an example, to retrieve the `title` from the config, we could use the following code in our twig template.
+
+``` .html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Access global title value. -->
+    <title>{{ global.title }}</title>
+</head>
+<body>
+    <!-- Body content here. -->
+</body>
+</html>
+```
+
+Plugin Usage {#plugin-usage}
+============================
+
+Using the global config in a plugin can be easily done by just using the following code.
+
+This code uses the Config class provided with Laravel 4.
+
+``` .php
+// Return the full array of config.
+$config = Config::get('lablog::global');
+
+// Return a specific config value.
+$blogTitle = Config::get('lablog::global.title');
+```

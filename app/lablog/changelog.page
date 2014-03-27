@@ -1,6 +1,17 @@
 Change Log
 ==========
 
+Please see below for the change logs for the LaBLog project.
+
+The change list includes some upcoming changes and all past changes to the package.
+
+Version 0.1.2
+-------------
+
+### Upcoming
+
+- Remove extra.php config file from pagkage. (Replaced by global.php config file.)
+
 Version 0.1.1
 -------------
 ### 23 March 2014

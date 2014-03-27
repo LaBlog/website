@@ -54,29 +54,27 @@
                 <h2>Basic</h2>
                 <ul>
                     <li>
-                        {% set getting_started = getPost('documentation/basic', 'getting_started') %}
-                        <a href="{{ getting_started.url }}">{{ getting_started.name | title | replace('_', ' ') }}</a>
+                        <a href="{{ url('documentation/basic/getting_started') }}">Getting Started</a>
                     </li>
                     <li>
-                        {% set posts_pages = getPost('documentation/basic', 'posts_and_pages') %}
-                        <a href="{{ posts_pages.url }}">{{ posts_pages.name | title | replace('_', ' ') }}</a>
+                        <a href="{{ url('documentation/basic/posts_and_pages') }}">Posts &amp; Pages</a>
                     </li>
                 </ul>
 
                 <h2>Advanced</h2>
                 <ul>
-                    <li><a href="">Global Config</a></li>
-                    <li><a href="">Blog Config</a></li>
-                    <li><a href="">Post/Page Config</a></li>
-                    <li><a href="">Class Bindings</a></li>
+                    <li><a href="{{ url('documentation/advanced/global_config') }}">Global Config</a></li>
+                    <li><a href="{{ url('documentation/advanced/blog_config') }}">Blog Config</a></li>
+                    <li><a href="{{ url('documentation/advanced/post_page_config') }}">Post/Page Config</a></li>
+                    <li><a href="{{ url('documentation/advanced/class_bindings') }}">Class Bindings</a></li>
                 </ul>
 
-                <h2>Theming</h2>
+                <h2>Theming (Coming Soon)</h2>
                 <ul>
-                    <li><a href="">Theme Setup and Files</a></li>
-                    <li><a href="">Template Functions and Filters</a></li>
-                    <li><a href="">Twig Templates</a></li>
-                    <li><a href="">Twig Template Extensions</a></li>
+                    <li><a disabled="disabled" href="">Theme Setup and Files</a></li>
+                    <li><a disabled="disabled" href="">Template Functions and Filters</a></li>
+                    <li><a disabled="disabled" href="">Twig Templates</a></li>
+                    <li><a disabled="disabled" href="">Twig Template Extensions</a></li>
                 </ul>
             </aside>
             <section class="content">

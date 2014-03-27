@@ -1,0 +1,66 @@
+Class Binding Configuration
+===========================
+
+- [Class Bindings](#class-bindings)
+- [Binding List](#binding-list)
+
+- - -
+
+Class Bindings {#class-bindings}
+================================
+
+The class binding configuration is provided as an easy way to replace or extend LaBlog base classes with your own.
+
+For example, to use the `Parsedown` plugin that is available for LaBlog, you must change the `Lablog\Lablog\Processor\ProcessorInterface` value to point to the processor class that comes with the Parsedown plugin.
+
+Binding List {#binding-list}
+============================
+
+The following list consists of the the bindings for LaBlog and what they provide.
+
+ProcessorInterface
+------------------
+
+`'Lablog\Lablog\Processor\ProcessorInterface' => 'Lablog\Lablog\Processor\MarkdownProcessor',`
+
+The ProcessorInterface is the processor that is used to process the blog posts and pages. By default, this is the MarkdownExtra processor that is required by LaBlog. This can be replaced with any processor you like, as long as the processor has a wrapper class that implements the `ProcessorInterface`.
+
+PageGatewayInterface
+--------------------
+
+`'Lablog\Lablog\Page\PageGatewayInterface' => 'Lablog\Lablog\Page\FilePage',`
+
+The PageGatewayInterface provides a gateway to retrieve and save pages. (By default, pages are not saved using this method, as default pages are markdown files.)
+
+This is responsible for creating the `Lablog\Lablog\Page\Page` object with the necessary information. (eg, page content, name, modified date and so on.).
+
+As an example, this could be replaced with a database driven page storage gateway, as long as the gateway implements the `PageGatewayInterface`.
+
+PostGatewayInterface
+--------------------
+
+`'Lablog\Lablog\Post\PostGatewayInterface' => 'Lablog\Lablog\Post\FilePost',`
+
+This is functionally the same as the `PageGatewayInterface` but to retrieve posts, instead of pages.
+
+Both pages and posts could be set the the same class, depending on setup.
+
+PageConfigGatewayInterface & PostConfigGatewayInterface
+-------------------------------------------------------
+
+`'Lablog\Lablog\Page\PageConfigGatewayInterface' => 'Lablog\Lablog\Page\JsonPageConfig',`
+
+`'Lablog\Lablog\Post\PostConfigGatewayInterface' => 'Lablog\Lablog\Post\JsonPostConfig',`
+
+Both of these interfaces provide a way of getting the post or page configuration. By default, this is done by extracting the `{POSTCONFIG}` and `{PAGECONFIG}` tag sections from the post content.
+
+It is possible to replace this with a database version that retrieves the post or page config from a database table.
+
+CategoryGatewayInterface
+------------------------
+
+`'Lablog\Lablog\Category\CategoryGatewayInterface' => 'Lablog\Lablog\Category\FileCategory',`
+
+This interface is responsible for retrieving the post categories. By default, these are folders within the `app/lablog` directory.
+
+This could be easily replaced with a database version.

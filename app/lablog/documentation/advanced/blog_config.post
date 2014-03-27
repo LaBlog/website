@@ -1,0 +1,74 @@
+Blog Config
+===========
+
+- [Config](#config)
+- [Config Options](#config-options)
+
+- - -
+
+Config {#config}
+================
+
+The LaBlog package includes some very basic configuration options for the package.
+
+All options set here are strictly related to the lablog package and will effect the system in various ways.
+
+The config file is found in the following location: `app/config/packages/lablog/lablog/config.php`
+
+If the file is not available, make sure you have publishes the package config with the following command.
+
+```
+php artisan config:publish lablog/lablog
+```
+
+Config Options {#config-options}
+================================
+
+The config file contains the following options:
+
+Prefix
+------
+
+The prefix is the prefix for the blog url paths.
+
+For example, a prefix of `blog` would set your blog url's to be prefixed with `http://example.com/blog/` and a post could be accessed at `http://example.com/blog/documents/getting_started`.
+
+Pages
+-----
+
+As explained in the `Posts & Pages` documentation, the pages array contains a list of all pages that you have added to the site.
+
+Example:
+
+```
+...
+    'pages' => array(
+        'about',
+        'contact_us'
+    ),
+...
+```
+
+*Note: This does not include the home page!*
+
+Theme
+-----
+
+The theme setting is the view location of the theme to be activated on the blog.
+
+The theme setting works the same as the laravel view class and uses dot notation to seperate folders.
+
+``` .php
+// Use the default theme.
+// This points the theme to the path of vendor/lablog/lablog/src/views/lablog/default.
+'theme' => 'lablog::lablog.default'
+
+// Use a folder in the default laravel app/views directory.
+// This points the theme to the path of app/views/lablog.
+'theme' => 'lablog'
+
+// Use a theme provided by a package.
+// This points to an example theme called 'jralph/simple-blog'.
+// The path would be as follows. vendor/jralph/simple-blog/src/views/simple-blog-theme.
+'theme' => 'simple-blog::simple-blog-theme'
+```

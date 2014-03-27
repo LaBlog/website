@@ -1,0 +1,53 @@
+Post & Page Config
+==================
+
+- [Config Blocks](#config-blocks)
+- [Template Use](#template-use)
+
+- - -
+
+Config Blocks {#config-blocks}
+==============================
+
+LaBlog comes with a simple way to add extra variables and options on a per page/post basis. This is done using config blocks.
+
+A post or page config block is identified by a `{POSTCONFIG}` or `{PAGECONFIG}` at the start and end of a json object.
+
+```
+// Note, replace the brackets with curly braces.
+(POSTCONFIG)
+{
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, minima!"
+    "comments": true
+}
+(POSTCONFIG)
+```
+
+The above config on a post could be used to add a simple post description. When then, in the template, could be displayed on the post list page as an excerpt.
+
+The comments option could also be used in the template page to toggle the use of comments on or off (for example, if using disqus for comments.).
+
+Template Use {#template-use}
+============================
+
+To use the config in a twig template file, all you have to do is access the `config` object, like so.
+
+``` .php
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ global.title }}</title>
+</head>
+<body>
+    {% for post in posts %}
+        <article>
+            <h1>{{ post.name }}</h1>
+            <p>{{ post.description }}</p>
+        </article>
+    {% endfor %}
+</body>
+</html>
+```
+
+The above code, used on the posts.twig templage page, would list all posts in the requested category and display them along with the description provided in the file, if it exists.
