@@ -1,0 +1,30 @@
+{% extends 'lablog.layout.master' %}
+
+{% block content %}
+    <article class="page">
+        {% set plugin_page = page('plugins') %}
+        {{ plugin_page.content }}
+
+        <h1>Official Plugins</h1>
+        <p>Click on the plugin below to view full information. Click on the <i class="fa fa-fw fa-github"></i> icon to view the plugin on github or on the <i class="fa fa-fw fa-inbox"></i> icon to view on packagist.</p>
+        {% set official = getCategoryPosts('plugins/official') %}
+        <ul class="plugin-list">
+            {% for plugin in official %}
+                <li>
+                    <h2>
+                        <a href="{{ plugin.url }}">{{ plugin.name | title }}</a>
+                        <small>
+                            {% if plugin.config.github.url %}
+                                <a title="View on GitHub" target="_blank" href="{{ plugin.config.github.url }}"><i class="fa fa-fw fa-github"></i></a>
+                            {% endif %}
+                            {% if plugin.config.packagist.url %}
+                                <a title="View on Packagist" target="_blank" href="{{ plugin.config.packagist.url }}"><i class="fa fa-fw fa-inbox"></i></a>
+                            {% endif %}
+                        </small>
+                    </h2>
+                    <p>{{ plugin.config.description }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </article>
+{% endblock %}

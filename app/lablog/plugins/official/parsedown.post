@@ -1,0 +1,15 @@
+{POSTCONFIG}
+{
+    "title": "Parsedown Processor &amp; Filter",
+    "description": "A wrapper and twig filter for the Parsdown markdown processor for php.",
+    "github": {
+        "url": "https://github.com/LaBlog/Parsedown"
+    },
+    "packagist": {
+        "url": "https://packagist.org/packages/lablog/parsedown"
+    }
+}
+{POSTCONFIG}
+
+Parsedown Processor
+===================

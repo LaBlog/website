@@ -1,0 +1,15 @@
+{POSTCONFIG}
+{
+    "title": "Stringy Filters",
+    "description": "A wrapper for danielstjules/Stringy to allow use as twig filters.",
+    "github": {
+        "url": "https://github.com/LaBlog/Stringy"
+    },
+    "packagist": {
+        "url": "https://packagist.org/packages/lablog/stringy"
+    }
+}
+{POSTCONFIG}
+
+Stringy Filters
+===============

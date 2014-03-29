@@ -1,0 +1,15 @@
+{POSTCONFIG}
+{
+    "title": "Markdown Filter",
+    "description": "A simple twig template filter to process a string or block of content as markdown and output the generated html.",
+    "github": {
+        "url": "https://github.com/LaBlog/Markdown"
+    },
+    "packagist": {
+        "url": "https://packagist.org/packages/lablog/markdown"
+    }
+}
+{POSTCONFIG}
+
+Markdown Filter
+===============

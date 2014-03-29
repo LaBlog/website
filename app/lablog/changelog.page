@@ -8,9 +8,10 @@ The change list includes some upcoming changes and all past changes to the packa
 Version 0.1.2
 -------------
 
-### Upcoming
+### 29 March 2014
 
 - Remove extra.php config file from pagkage. (Replaced by global.php config file.)
+- Fixed post display order bug that was sorting by wrong value.
 
 Version 0.1.1
 -------------
