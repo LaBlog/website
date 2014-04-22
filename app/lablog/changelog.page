@@ -5,13 +5,20 @@ Please see below for the change logs for the LaBLog project.
 
 The change list includes some upcoming changes and all past changes to the package.
 
-Version 0.1.7
+Version 0.1.8
 -------------
 
 ### Coming Soon
 
 - Add configuration option to disable posts and categories pages.
 - Add cache to post parsing to avoid recreating the HTML.
+
+Version 0.1.7
+-------------
+
+### 22 April 2014
+
+- Fixed bug with recursive posts function.
 
 Version 0.1.6
 -------------
