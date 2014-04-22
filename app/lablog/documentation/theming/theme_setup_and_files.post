@@ -1,0 +1,91 @@
+Theme Setup & Files
+===================
+
+- [Templating Support](#templating-support)
+- [Template Files](#template-files)
+- [Theme Structure](#theme-structure)
+- [Creating a Theme](#creating-a-theme)
+
+- - -
+
+Templating Support {#templating-support}
+========================================
+
+LaBlog supports the use of most templating engines that support full intergration with the default Laravel view system.
+
+By default, LaBlog uses and works best with the twig template engine.
+
+More information on the twig templating engine can be found [here](http://twig.sensiolabs.org/).
+
+If you do not wish to use the provided twig filters and extensions, you are welcome to use Laravel's blade templating engine and using the LaBlog classes directly. You could also use other templating engines such as `mustache`.
+
+*Note: The only tested templating engine is the twig template engine. Others will work, but bugs may be present.*
+
+Template Files {#template-files}
+================================
+
+The following files are used by LaBlog when generating pages and content.
+
+- 404.twig
+- categories.twig
+- category.twig
+- index.twig
+- page.twig
+- {pagename}.twig
+- post.twig
+- posts.twig
+
+All of the above template files are __required__ for LaBlog to opperate correctly without throwing errors.
+
+*Note: The .twig extension is only applicable for the twig engine, if you are using blade, change the extension to .blade.php, or to the required extension for your templating engine.*
+
+404 Template
+------------
+
+This template is responsible for the view displayed when a 404 error is thrown. (eg, when a post can not be found.).
+
+Categories Template
+-------------------
+
+This template is used to display a list of all categories in the blog.
+
+Category Template
+-----------------
+
+This template is used to display the view of a single category, including its sub categories and posts.
+
+Index Template
+--------------
+
+This template is responsible for the view of the root blog page and can display what ever you want.
+
+Page Template
+-------------
+
+This template is used to display a single page.
+
+The `{pagename}.twig` template works in the same way, but is only loaded on pages that match the file name.
+
+Post Template
+-------------
+
+This template is responsible for displaying a single post.
+
+Posts Template
+--------------
+
+This template is responsible for displaying a view of all posts on the LaBlog site.
+
+Theme Structure {#theme-structure}
+==================================
+
+As long as the above mentioned template files are included, you are free to use the twig templating engine (or templating engine of choice) to its full extent.
+
+An example of this could be to have a `/layouts/` folder within your template folder. In this folder you could create `master.twig` that contains your header and footer elements and a content block. This master template is then included in all of the main template files using twig.
+
+Creating a Theme {#creating-a-theme}
+====================================
+
+Now we know what files are required, we can begin to create a template.
+
+Below you can find `twig` examples of each of the template files.
