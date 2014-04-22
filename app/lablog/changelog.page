@@ -16,6 +16,8 @@ Version 0.1.7
 Version 0.1.6
 -------------
 
+### 22 April 2014
+
 - Updated posts twig extension to include recursive category posts function.
 
 Version 0.1.5
