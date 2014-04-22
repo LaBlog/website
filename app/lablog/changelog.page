@@ -13,6 +13,11 @@ Version 0.1.3
 - Add configuration option to disable posts and categories pages.
 - Add cache to post parsing to avoid recreating the HTML.
 
+Version 0.1.6
+-------------
+
+- Updated posts twig extension to include recursive category posts function.
+
 Version 0.1.5
 -------------
 
